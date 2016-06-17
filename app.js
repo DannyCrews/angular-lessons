@@ -2,9 +2,13 @@
 var myApp = angular.module('myApp', []);
 
 // declare a controller and inject some services
-myApp.controller('mainController', ['$scope', '$log', function($scope, $log) {
+myApp.controller('mainController', ['$scope', '$timeout', function($scope, $timeout) {
 
-  $log.info($scope);
+  $scope.name = 'Dan';
+
+  $timeout(function() {
+    $scope.name = 'Everybody';
+  }, 3000);
 
 }]);
 
